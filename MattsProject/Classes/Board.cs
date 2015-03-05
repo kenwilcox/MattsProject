@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MattsProject.Interface;
 
 namespace MattsProject
@@ -31,6 +32,11 @@ namespace MattsProject
     public void ShowBoard()
     {
       _style.Draw(_board, _list);
+    }
+
+    public Square GetRandomSquare()
+    {
+      return _list.OrderBy(x => Guid.NewGuid()).First();
     }
   }
 }

@@ -17,15 +17,15 @@ namespace MattsProject
   {
     static void Main(string[] args)
     {
-      SquareList list = new SquareList();
-      for (int row = 0; row < 8; row++)
-      {
-        for (int col = 0; col < 8; col++)
-        {
-          list.Add(new Square(row, col));
-        }
-      }
-      list.FindAllNeighbors();
+      //SquareList list = new SquareList();
+      //for (int row = 0; row < 8; row++)
+      //{
+      //  for (int col = 0; col < 8; col++)
+      //  {
+      //    list.Add(new Square(row, col));
+      //  }
+      //}
+      //list.FindAllNeighbors();
 
       // Each Square knows the neighbor
       // Pick a random square and print out neighbors
@@ -35,9 +35,9 @@ namespace MattsProject
       //Random rand = new Random();
       //Square randomSquare = list[rand.Next(list.Count)];
 
-      // http://stackoverflow.com/questions/9449452/linq-order-by-random
-      Square randomSquare = list.OrderBy(x => Guid.NewGuid()).First();
-      randomSquare.PrintNeighbors();
+      //// http://stackoverflow.com/questions/9449452/linq-order-by-random
+      //Square randomSquare = list.OrderBy(x => Guid.NewGuid()).First();
+      //randomSquare.PrintNeighbors();
 
 
       //Board board = new Board(new TickTackToeBoard(), new BoardStyleHugsAndKisses());
@@ -73,6 +73,10 @@ namespace MattsProject
 
       var obj = container.Resolve<Board>();
       obj.ShowBoard();
+      
+      Console.WriteLine();
+      Square randomSquare = obj.GetRandomSquare();
+      randomSquare.PrintNeighbors();
 
       Console.ReadKey();
     }
