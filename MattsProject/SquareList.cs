@@ -8,8 +8,6 @@ namespace MattsProject
 {
   public class SquareList : List<Square>
   {
-    private readonly NotASquare _nas = new NotASquare();
-
     // Since the list knows all squares, ask it to find the neighbors
     public void FindNeighbors(Square square)
     {
@@ -18,10 +16,10 @@ namespace MattsProject
       // East, row same col +1
       // West, row same col -1
 
-      square.North = this.Where(s => s.row == square.row - 1 && s.col == square.col).DefaultIfEmpty(_nas).First();
-      square.South = this.Where(s => s.row == square.row + 1 && s.col == square.col).DefaultIfEmpty(_nas).First();
-      square.East = this.Where(s => s.row == square.row && s.col == square.col + 1).DefaultIfEmpty(_nas).First();
-      square.West = this.Where(s => s.row == square.row && s.col == square.col - 1).DefaultIfEmpty(_nas).First();
+      square.North = this.Where(s => s.Row == square.Row - 1 && s.Col == square.Col).DefaultIfEmpty(Square.Empty).First();
+      square.South = this.Where(s => s.Row == square.Row + 1 && s.Col == square.Col).DefaultIfEmpty(Square.Empty).First();
+      square.East = this.Where(s => s.Row == square.Row && s.Col == square.Col + 1).DefaultIfEmpty(Square.Empty).First();
+      square.West = this.Where(s => s.Row == square.Row && s.Col == square.Col - 1).DefaultIfEmpty(Square.Empty).First();
 
     }
 
@@ -33,7 +31,7 @@ namespace MattsProject
 
     public Square FindSquare(int col, int row)
     {
-      return this.Where(s => s.col == col && s.row == row).DefaultIfEmpty(_nas).First();
+      return this.Where(s => s.Col == col && s.Row == row).DefaultIfEmpty(Square.Empty).First();
     }
   }
 }

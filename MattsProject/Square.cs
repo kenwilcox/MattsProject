@@ -9,18 +9,34 @@ namespace MattsProject
 {
   public class Square
   {
+    private static readonly Square Nas = new Square();
+
+    private readonly string _message;
+
     public Square North { get; set; }
     public Square South { get; set; }
     public Square East { get; set; }
     public Square West { get; set; }
 
-    public int row { get; set; }
-    public int col { get; set; }
+    public int Row { get; private set; }
+    public int Col { get; private set; }
 
-    public Square(int x, int y)
+    public Square(int col, int row)
     {
-      this.row = x;
-      this.col = y;
+      this.Row = row;
+      this.Col = col;
+      _message = String.Format("I am square {0}, {1}", Col, Row);
+    }
+
+    public Square(): this(-1, -1)
+    {
+      // Just need to replace message
+      _message = "There is no square here";
+    }
+
+    public static Square Empty
+    {
+      get { return Nas; }
     }
 
     public void PrintNeighbors()
@@ -34,7 +50,7 @@ namespace MattsProject
 
     public override string ToString()
     {
-      return String.Format("I am square {0}, {1}", col, row);
+      return _message;
     }
   }
 }
