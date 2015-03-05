@@ -1,4 +1,6 @@
-﻿namespace MattsProject.Interface
+﻿using MattsProject.Classes;
+
+namespace MattsProject.Interface
 {
   public interface IBoardStyle
   {

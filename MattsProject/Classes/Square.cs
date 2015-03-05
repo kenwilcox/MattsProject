@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MattsProject
+namespace MattsProject.Classes
 {
   public class Square
   {
@@ -18,8 +18,8 @@ namespace MattsProject
 
     public Square(int col, int row)
     {
-      this.Row = row;
-      this.Col = col;
+      Row = row;
+      Col = col;
       _message = String.Format("I am square {0}, {1}", Col, Row);
     }
 
@@ -36,11 +36,11 @@ namespace MattsProject
 
     public void PrintNeighbors()
     {
-      Console.WriteLine(this.ToString());
-      Console.WriteLine("North: {0}", North.ToString());
-      Console.WriteLine("South: {0}", South.ToString());
-      Console.WriteLine("East : {0}", East.ToString());
-      Console.WriteLine("West : {0}", West.ToString());
+      Console.WriteLine(ToString());
+      Console.WriteLine("North: {0}", North);
+      Console.WriteLine("South: {0}", South);
+      Console.WriteLine("East : {0}", East);
+      Console.WriteLine("West : {0}", West);
     }
 
     public override string ToString()

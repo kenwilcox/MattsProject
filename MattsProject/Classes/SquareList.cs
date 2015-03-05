@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MattsProject
+namespace MattsProject.Classes
 {
   public class SquareList : List<Square>
   {

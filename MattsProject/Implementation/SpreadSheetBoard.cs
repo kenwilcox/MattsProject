@@ -19,7 +19,7 @@ namespace MattsProject.Implementation
 
     public string GetBoardTitle()
     {
-      return this.GetType().Name;
+      return GetType().Name;
     }
     #endregion
   }

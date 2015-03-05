@@ -1,4 +1,4 @@
-﻿namespace MattsProject
+﻿namespace MattsProject.Classes
 {
   public enum SquareLocation
   {

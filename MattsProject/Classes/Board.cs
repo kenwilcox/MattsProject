@@ -2,7 +2,7 @@
 using System.Linq;
 using MattsProject.Interface;
 
-namespace MattsProject
+namespace MattsProject.Classes
 {
   /// <summary>
   /// A Board is just a fancy wrapper to SquareList

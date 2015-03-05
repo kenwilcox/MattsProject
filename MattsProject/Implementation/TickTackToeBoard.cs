@@ -1,5 +1,4 @@
-﻿using System;
-using MattsProject.Interface;
+﻿using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MattsProject.Classes;
 using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {
   class BoardStyleHugsAndKisses: IBoardStyle
   {
-    private Random _random;
+    private readonly Random _random;
     
     public BoardStyleHugsAndKisses()
     {
@@ -31,7 +28,6 @@ namespace MattsProject.Implementation
         string line = String.Empty;
         for (int col = board.GetMinIndex(); col < board.GetMaxIndex(); col++)
         {
-          Square square = list.FindSquare(col, row);
           line += String.Format("{0}", GetXorO()) + "|";
         }
         Console.WriteLine(line);

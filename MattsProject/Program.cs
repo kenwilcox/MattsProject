@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MattsProject.Classes;
 using MattsProject.Interface;
 using Microsoft.Practices.Unity;
 
@@ -9,7 +10,7 @@ namespace MattsProject
 {
   class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
       // Now some fun - Using a random board and random board style draw some output
       // BUT we're going to be using unity for some DI goodness!
@@ -30,7 +31,7 @@ namespace MattsProject
       }
 
       Console.WriteLine();
-      Console.WriteLine(String.Format("Boards: {0} - Styles: {1}", boards.Count(), styles.Count()));
+      Console.WriteLine("Boards: {0} - Styles: {1}", boards.Count(), styles.Count());
 
       Type randomBoard = boards.OrderBy(x => Guid.NewGuid()).First();
       Type randomStyle = styles.OrderBy(x => Guid.NewGuid()).First();
