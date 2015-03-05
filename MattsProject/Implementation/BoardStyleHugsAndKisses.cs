@@ -4,7 +4,7 @@ using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {
-  class BoardStyleHugsAndKisses: IBoardStyle
+  class BoardStyleHugsAndKisses : BaseBoardStyle, IBoardStyle
   {
     private readonly Random _random;
     
@@ -18,21 +18,9 @@ namespace MattsProject.Implementation
       return _random.Next(100)%2 == 0 ? "X" : "O";
     }
 
-    #region IBoardStyle Members
-    public void Draw(IBoardInterface board, SquareList list)
+    protected override string GetCellValue(Square square)
     {
-      Console.WriteLine();
-      Console.WriteLine(board.GetBoardTitle() + "| BoardStyleHugsAndKisses");
-      for (int row = board.GetMinIndex(); row < board.GetMaxIndex(); row++)
-      {
-        string line = String.Empty;
-        for (int col = board.GetMinIndex(); col < board.GetMaxIndex(); col++)
-        {
-          line += String.Format("{0}", GetXorO()) + "|";
-        }
-        Console.WriteLine(line);
-      }
+      return String.Format("{0}", GetXorO());
     }
-    #endregion
   }
 }

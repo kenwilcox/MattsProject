@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\BaseBoardStyle.cs" />
     <Compile Include="Implementation\BoardStyleExcel.cs" />
     <Compile Include="Implementation\BoardStyleHugsAndKisses.cs" />
     <Compile Include="Implementation\BoardStyleNormal.cs" />

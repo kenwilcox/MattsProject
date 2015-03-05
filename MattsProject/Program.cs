@@ -20,13 +20,16 @@ namespace MattsProject
 
       foreach (Type type in me.GetTypes())
       {
-        if (type.GetInterfaces().Contains(typeof (IBoardInterface)))
+        if (!type.IsAbstract)
         {
-          boards.Add(type);
-        }
-        else if (type.GetInterfaces().Contains(typeof (IBoardStyle)))
-        {
-          styles.Add(type);
+          if (type.GetInterfaces().Contains(typeof (IBoardInterface)))
+          {
+            boards.Add(type);
+          }
+          else if (type.GetInterfaces().Contains(typeof (IBoardStyle)))
+          {
+            styles.Add(type);
+          }
         }
       }
 

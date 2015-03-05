@@ -4,7 +4,7 @@ using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {
-  class BoardStyleExcel : IBoardStyle
+  class BoardStyleExcel : BaseBoardStyle, IBoardStyle
   {
     public string ColIndexToChar(int index)
     {
@@ -13,22 +13,9 @@ namespace MattsProject.Implementation
       return letter.ToString();
     }
 
-    #region IBoardStyle Members
-    public void Draw(IBoardInterface board, SquareList list)
+    protected override string GetCellValue(Square square)
     {
-      Console.WriteLine();
-      Console.WriteLine(board.GetBoardTitle() + "| BoardStyleExcel");
-      for (int row = board.GetMinIndex(); row < board.GetMaxIndex(); row++)
-      {
-        string line = String.Empty;
-        for (int col = board.GetMinIndex(); col < board.GetMaxIndex(); col++)
-        {
-          Square square = list.FindSquare(col, row);
-          line += String.Format("{0}{1}", ColIndexToChar(square.Col), square.Row) + "|";
-        }
-        Console.WriteLine(line);
-      }
+      return String.Format("{0}{1}", ColIndexToChar(square.Col), square.Row);
     }
-    #endregion
   }
 }
