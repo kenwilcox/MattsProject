@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using MattsProject.Implementation;
 
 namespace MattsProject
 {
@@ -33,7 +34,11 @@ namespace MattsProject
       // http://stackoverflow.com/questions/9449452/linq-order-by-random
       Square randomSquare = list.OrderBy(x => Guid.NewGuid()).First();
       randomSquare.PrintNeighbors();
-      
+
+
+      Board board = new Board(new TickTackToeBoard(), new BoardStyleHugsAndKisses());
+      board.ShowBoard();
+
       Console.ReadKey();
     }
   }

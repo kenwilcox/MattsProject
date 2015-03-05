@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\BoardStyleExcel.cs" />
+    <Compile Include="Implementation\BoardStyleHugsAndKisses.cs" />
+    <Compile Include="Implementation\BoardStyleNormal.cs" />
+    <Compile Include="Classes\Board.cs" />
+    <Compile Include="Interface\IBoardStyle.cs" />
+    <Compile Include="Implementation\TickTackToeBoard.cs" />
+    <Compile Include="Interface\IBoardInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Square.cs" />
     <Compile Include="Classes\SquareList.cs" />
     <Compile Include="Classes\SquareLocation.cs" />
+    <Compile Include="Implementation\SpreadSheetBoard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
