@@ -4,7 +4,7 @@ using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {
-  class BoardStyleExcel : BaseBoardStyle, IBoardStyle
+  public class BoardStyleExcel : BaseBoardStyle, IBoardStyle
   {
     public string ColIndexToChar(int index)
     {

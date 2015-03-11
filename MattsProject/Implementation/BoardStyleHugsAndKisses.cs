@@ -4,7 +4,7 @@ using MattsProject.Interface;
 
 namespace MattsProject.Implementation
 {
-  class BoardStyleHugsAndKisses : BaseBoardStyle, IBoardStyle
+  public class BoardStyleHugsAndKisses : BaseBoardStyle, IBoardStyle
   {
     private readonly Random _random;
     
